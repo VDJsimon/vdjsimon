@@ -73,17 +73,34 @@ export default function App() {
 
   // Live Customizer States
   const [showCustomizer, setShowCustomizer] = useState(false);
-  const [logoText, setLogoText] = useState(() => localStorage.getItem('prmpt_logo') || 'the-fifth');
+  const [logoText, setLogoText] = useState(() => {
+    const saved = localStorage.getItem('prmpt_logo');
+    if (!saved || saved === 'prmpt') return 'the-fifth';
+    return saved;
+  });
   const [captionText, setCaptionText] = useState(() => localStorage.getItem('prmpt_caption') || 'When switching between videos near the center, do not reset currentTime to 0 abruptly. Add a small dead zone: if cursor is within +/-50px of center, keep both videos at currentTime = 0 and show whichever was last active.');
   const [navAboutText, setNavAboutText] = useState(() => localStorage.getItem('prmpt_nav_about') || 'ABOUT');
-  const [navCartText, setNavCartText] = useState(() => localStorage.getItem('prmpt_nav_cart') || '[ 2026 ]');
-  const [collectionText, setCollectionText] = useState(() => localStorage.getItem('prmpt_collection') || 'ARCHIVE COLLECTION\n"THE-FIFTH"');
+  const [navCartText, setNavCartText] = useState(() => {
+    const saved = localStorage.getItem('prmpt_nav_cart');
+    if (!saved || saved === '[ CART ]') return '[ 2026 ]';
+    return saved;
+  });
+  const [collectionText, setCollectionText] = useState(() => {
+    const saved = localStorage.getItem('prmpt_collection');
+    if (!saved || saved === 'ARCHIVE COLLECTION\n"PROMPT"') return 'ARCHIVE COLLECTION\n"THE-FIFTH"';
+    return saved;
+  });
   const [priceText, setPriceText] = useState(() => localStorage.getItem('prmpt_price') || '$97,33');
   const [viewBtnText, setViewBtnText] = useState(() => {
     const saved = localStorage.getItem('prmpt_view_btn');
-    return (saved && saved !== 'view') ? saved : '5th Simon';
+    if (!saved || saved === 'view') return '5th Simon';
+    return saved;
   });
-  const [footerLeftText, setFooterLeftText] = useState(() => localStorage.getItem('prmpt_footer_left') || 'THE-FIFTH (R) 2026');
+  const [footerLeftText, setFooterLeftText] = useState(() => {
+    const saved = localStorage.getItem('prmpt_footer_left');
+    if (!saved || saved === 'PRMPT (R) 2026') return 'THE-FIFTH (R) 2026';
+    return saved;
+  });
   const [footerRightText, setFooterRightText] = useState(() => localStorage.getItem('prmpt_footer_right') || 'PRIVACY POLICY');
   
   const [leftVideoUrl, setLeftVideoUrl] = useState(() => localStorage.getItem('prmpt_left_video') || 'https://d8j0ntlcm91z4.cloudfront.net/user_39ca84eAE1ODL9hbR5VhoEj8tBf/hf_20260625_154433_532a85d3-dabf-4265-b8bd-19ac6af31842.mp4');
