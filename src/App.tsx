@@ -76,7 +76,7 @@ export default function App() {
   const [logoText, setLogoText] = useState(() => localStorage.getItem('prmpt_logo') || 'the-fifth');
   const [captionText, setCaptionText] = useState(() => localStorage.getItem('prmpt_caption') || 'When switching between videos near the center, do not reset currentTime to 0 abruptly. Add a small dead zone: if cursor is within +/-50px of center, keep both videos at currentTime = 0 and show whichever was last active.');
   const [navAboutText, setNavAboutText] = useState(() => localStorage.getItem('prmpt_nav_about') || 'ABOUT');
-  const [navCartText, setNavCartText] = useState(() => localStorage.getItem('prmpt_nav_cart') || '[ CART ]');
+  const [navCartText, setNavCartText] = useState(() => localStorage.getItem('prmpt_nav_cart') || '[ 2026 ]');
   const [collectionText, setCollectionText] = useState(() => localStorage.getItem('prmpt_collection') || 'ARCHIVE COLLECTION\n"THE-FIFTH"');
   const [priceText, setPriceText] = useState(() => localStorage.getItem('prmpt_price') || '$97,33');
   const [viewBtnText, setViewBtnText] = useState(() => {
