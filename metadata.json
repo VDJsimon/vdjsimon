@@ -1,0 +1,6 @@
+{
+  "name": "prmpt Fashion Archive",
+  "description": "A highly-polished scroll-driven fashion archive landing page featuring dynamic interactive video backgrounds, smooth parallax grids, and custom cursors.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
