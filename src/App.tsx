@@ -79,10 +79,10 @@ export default function App() {
     return saved;
   });
   const [captionText, setCaptionText] = useState(() => localStorage.getItem('prmpt_caption') || 'When switching between videos near the center, do not reset currentTime to 0 abruptly. Add a small dead zone: if cursor is within +/-50px of center, keep both videos at currentTime = 0 and show whichever was last active.');
-  const [navAboutText, setNavAboutText] = useState(() => localStorage.getItem('prmpt_nav_about') || 'ABOUT');
+  const [navAboutText, setNavAboutText] = useState(() => localStorage.getItem('prmpt_nav_about') || 'AI 設計 ');
   const [navCartText, setNavCartText] = useState(() => {
     const saved = localStorage.getItem('prmpt_nav_cart');
-    if (!saved || saved === '[ CART ]') return '[ 2026 ]';
+    if (!saved || saved === '[ 2026 ]') return '[ 2026 ]';
     return saved;
   });
   const [collectionText, setCollectionText] = useState(() => {
@@ -90,7 +90,7 @@ export default function App() {
     if (!saved || saved === 'ARCHIVE COLLECTION\n"PROMPT"') return 'ARCHIVE COLLECTION\n"THE-FIFTH"';
     return saved;
   });
-  const [priceText, setPriceText] = useState(() => localStorage.getItem('prmpt_price') || '$97,33');
+  const [priceText, setPriceText] = useState(() => localStorage.getItem('prmpt_price') || '#08-957');
   const [viewBtnText, setViewBtnText] = useState(() => {
     const saved = localStorage.getItem('prmpt_view_btn');
     if (!saved || saved === 'view') return '5th Simon';
