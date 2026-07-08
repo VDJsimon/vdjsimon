@@ -14,6 +14,7 @@ jobs:
     permissions:
       contents: write
       pages: write
+      administration: write
       id-token: write
 
     steps:
@@ -60,7 +61,7 @@ jobs:
       - name: Configure GitHub Pages source
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_PAGES_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
             const owner = context.repo.owner;
             const repo = context.repo.repo;
