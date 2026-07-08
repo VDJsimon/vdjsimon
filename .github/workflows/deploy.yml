@@ -5,6 +5,7 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -33,6 +34,17 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Print run info
+        run: |
+          echo "GITHUB_RUN_ID=$GITHUB_RUN_ID"
+          echo "GITHUB_RUN_NUMBER=$GITHUB_RUN_NUMBER"
+          echo "GITHUB_RUN_ATTEMPT=$GITHUB_RUN_ATTEMPT"
+
+      - name: Verify dist folder
+        run: |
+          echo 'Listing dist:'
+          ls -la dist || true
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
