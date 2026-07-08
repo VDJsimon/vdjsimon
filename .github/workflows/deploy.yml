@@ -31,7 +31,8 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Setup Pages
+      - name: Create CNAME file in dist
+        run: echo "demo.the-fifth.app" > dist/CNAME
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
