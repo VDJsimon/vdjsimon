@@ -22,7 +22,6 @@ export default defineConfig(() => {
     },
     build: {
       cssCodeSplit: false,
-      minify: 'terser',
       outDir: 'dist',
       emptyOutDir: true,
     },
