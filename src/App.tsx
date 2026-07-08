@@ -90,7 +90,7 @@ export default function App() {
     if (!saved || saved === 'ARCHIVE COLLECTION\n"PROMPT"') return 'ARCHIVE COLLECTION\n"THE-FIFTH"';
     return saved;
   });
-  const [priceText, setPriceText] = useState(() => localStorage.getItem('prmpt_price') || '$97,33');
+  const [priceText, setPriceText] = useState(() => localStorage.getItem('prmpt_price') || '08957');
   const [viewBtnText, setViewBtnText] = useState(() => {
     const saved = localStorage.getItem('prmpt_view_btn');
     if (!saved || saved === 'view') return '5th Simon';
@@ -138,7 +138,7 @@ export default function App() {
     let cap = 'When switching between videos near the center, do not reset currentTime to 0 abruptly. Add a small dead zone: if cursor is within +/-50px of center, keep both videos at currentTime = 0 and show whichever was last active.';
     let leftVid = 'https://d8j0ntlcm91z4.cloudfront.net/user_39ca84eAE1ODL9hbR5VhoEj8tBf/hf_20260625_154433_532a85d3-dabf-4265-b8bd-19ac6af31842.mp4';
     let rightVid = 'https://d8j0ntlcm91z4.cloudfront.net/user_39ca84eAE1ODL9hbR5VhoEj8tBf/hf_20260625_154401_a664f076-b971-4557-8728-40ef9ea4c49b.mp4';
-    let price = '$97,33';
+    let price = '08957';
     let coll = 'ARCHIVE COLLECTION\n"THE-FIFTH"';
     let imgs = GALLERY_IMAGES;
 
@@ -198,7 +198,7 @@ export default function App() {
     setNavAboutText('ABOUT');
     setNavCartText('[ 2026 ]');
     setCollectionText('ARCHIVE COLLECTION\n"THE-FIFTH"');
-    setPriceText('$97,33');
+    setPriceText('08957');
     setViewBtnText('5th Simon');
     setFooterLeftText('THE-FIFTH (R) 2026');
     setFooterRightText('PRIVACY POLICY');
@@ -1126,3 +1126,4 @@ export default function App() {
     </div>
   );
 }
+
