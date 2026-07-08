@@ -28,11 +28,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Clean previous build
+        run: rm -rf dist
+
       - name: Build project
         run: npm run build
 
-      - name: Create CNAME file in dist
-        run: echo "demo.the-fifth.app" > dist/CNAME
+      - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
